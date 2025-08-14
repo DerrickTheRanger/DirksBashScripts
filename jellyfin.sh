@@ -6,6 +6,6 @@ docker run -d \
  --net=host \
  --volume "$HOME_DIR/jellyfin/config":/config \
  --volume "$HOME_DIR/jellyfin/cache":/cache \
- --mount type=bind,source="HOME_DIR/jellyfin/media",target=/media \
+ --mount type=bind,source="$HOME_DIR/jellyfin/media",target=/media \
  --restart=unless-stopped \
 jellyfin/jellyfin

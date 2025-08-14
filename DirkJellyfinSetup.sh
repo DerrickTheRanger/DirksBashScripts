@@ -2,7 +2,7 @@
 set -e  # Exit on any error
 echo "🚀 Starting DirkScript"
 echo "Updating Ubuntu..."
-sudo apt update && apt upgrade -y
+apt update && apt upgrade -y
 echo "Update done!"
 if ! command -v docker &>/dev/null; then
     echo "🐳 Installing Docker..."

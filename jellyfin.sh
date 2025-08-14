@@ -1,7 +1,7 @@
 #!/bin/bash
 docker run -d \
  --name jellyfin \
- --user uid:gid \
+ --user 1000:1000 \
  --net=host \
  --volume /jellyfin/config:/config \
  --volume /jellyfin/cache:/cache \

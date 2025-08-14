@@ -58,7 +58,7 @@ sudo systemctl restart smbd nmbd
 echo "Samba share '$SHARE_NAME' available."
 
 echo "Starting docker container..."
-docker run -d \
+sudo docker run -d \
  --name jellyfin \
  --user 1000:1000 \
  --net=host \

@@ -1,27 +1,27 @@
 #!/bin/bash
 set -e  # Exit on any error
-echo "🚀 Starting DirkScript"
+echo "Starting DirkScript"
 echo "Updating Ubuntu..."
 sudo apt update && sudo apt upgrade -y
 echo "Update done!"
 if ! command -v docker &>/dev/null; then
-    echo "🐳 Installing Docker..."
+    echo "Installing Docker..."
     sudo apt install -y docker.io
     sudo systemctl enable --now docker
 fi
 if ! command -v smbpasswd &>/dev/null; then
-    echo "📦 Installing Samba..."
+    echo "Installing Samba..."
     sudo apt install -y samba
 fi
 echo "Installing jellyfin via docker..."
 sudo docker pull jellyfin/jellyfin
 echo "jellyfin install complete!"
 echo "Creating Jellyfin filesystem..."
-mkdir jellyfin
-mkdir jellyfin/config
-mkdir jellyfin/cache
-mkdir jellyfin/media
-mkdir jellyfin/media/videos
+mkdir -p jellyfin
+mkdir -p jellyfin/config
+mkdir -p jellyfin/cache
+mkdir -p jellyfin/media
+mkdir -p jellyfin/media/videos
 echo "Filesystem created!"
 
 # Setup Samba share for media

@@ -70,6 +70,7 @@ jellyfin/jellyfin
 #curl https://raw.githubusercontent.com/DerrickTheRanger/DirksBashScripts/refs/heads/main/jellyfin.sh | bash
 
 IP_ADDR=$(hostname -I | awk '{print $1}')
-echo "🎉 All done!"
-echo "📌 Access Jellyfin in browser: http://$IP_ADDR:8096"
-echo "📂 Access media folder in Windows: \\\\$IP_ADDR\\$SHARE_NAME"
+echo "All done!"
+echo "Access Jellyfin in browser: http://$IP_ADDR:8096"
+echo "Samba user is $SAMABA_USER"
+echo "Access media folder in Windows: \\\\$IP_ADDR\\$SHARE_NAME"

@@ -13,3 +13,5 @@ mkdir jellyfin/cache
 mkdir jellyfin/media
 mkdir jellyfin/media/videos
 echo "Filesystem created!"
+echo "Starting docker container..."
+curl https://raw.githubusercontent.com/DerrickTheRanger/DirksBashScripts/refs/heads/main/jellyfin.sh | bash

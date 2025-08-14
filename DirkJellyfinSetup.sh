@@ -27,6 +27,7 @@ echo "Filesystem created!"
 # Setup Samba share for media
 SHARE_NAME="media"
 SAMBA_USER="$USER"
+MEDIA_DIR="$HOME/jellyfin/media"
 
 # Backup Samba config (only once)
 if [ ! -f /etc/samba/smb.conf.bak ]; then
@@ -49,7 +50,7 @@ fi
 # Add Samba user (will prompt for password once)
 if ! sudo pdbedit -L | grep -q "^$SAMBA_USER:"; then
     echo "🔑 Creating Samba user: $SAMBA_USER"
-    sudo smbpasswd -a "$SAMBA_USER"
+    sudo smbpasswd -a "$SAMBA_USER" < /dev/tty
 fi
 
 # Restart Samba
